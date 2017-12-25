@@ -17,6 +17,9 @@ class Foo (state : Thread.State){
 	val isSet
 		get() = state == Thread.State.RUNNABLE
 
+	val name : String = "Foo"
+	
+	
 	/**
 	 *  Example of a function
 	 **/

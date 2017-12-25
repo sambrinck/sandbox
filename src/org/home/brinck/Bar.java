@@ -4,6 +4,7 @@ import java.lang.Thread.State;
 
 public class Bar {
 	private Thread.State state = Thread.State.BLOCKED;
+	private String name = new String ("Bar");
 	
 	public Bar (Thread.State state) {
 		this.setState(state);
@@ -25,5 +26,9 @@ public class Bar {
 	
 	public boolean isSet() {
 		return state == State.RUNNABLE;
+	}
+
+	public String getName() {
+		return name;
 	}
 }
