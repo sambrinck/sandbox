@@ -2,14 +2,20 @@ package org.home.brinck
 
 class Foo (state : Thread.State){
 	var state = state
-		set(value) {
-			println("Setting " + field + " to " + value)
-			field = value
-		}
+	/**
+	 *	Getter
+	 */
 		get () {
 			println("Getting: " + field)
 			return field
 		}
+		set(value) {
+			println("Setting " + field + " to " + value)
+			field = value
+		}
+	
+	val isSet
+		get() = state == Thread.State.RUNNABLE
 
 	/**
 	 *  Example of a function

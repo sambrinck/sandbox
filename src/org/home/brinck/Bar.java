@@ -1,5 +1,7 @@
 package org.home.brinck;
 
+import java.lang.Thread.State;
+
 public class Bar {
 	private Thread.State state = Thread.State.BLOCKED;
 	
@@ -19,5 +21,9 @@ public class Bar {
 	
 	public void setState() {
 		setState(Thread.State.RUNNABLE);
+	}
+	
+	public boolean isSet() {
+		return state == State.RUNNABLE;
 	}
 }
