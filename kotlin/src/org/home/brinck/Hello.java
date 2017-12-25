@@ -1,6 +1,8 @@
 package org.home.brinck;
 
 import java.lang.Thread.State;
+import org.home.brinck.Foo;
+import org.home.brinck.Bar;
 
 public class Hello {
 
