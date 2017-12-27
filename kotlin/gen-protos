@@ -1,0 +1,6 @@
+#!/bin/bash
+
+rm -rf gen
+mkdir gen
+protoc --java_out=gen proto/*
+

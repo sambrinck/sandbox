@@ -2,6 +2,8 @@ package org.home.brinck;
 
 import java.lang.Thread.State;
 import org.home.brinck.Foo;
+import org.home.brinck.Menu.Meal;
+import org.home.brinck.Menu.Meal.Builder;
 import org.home.brinck.Bar;
 
 public class Hello {
@@ -19,6 +21,8 @@ public class Hello {
 		System.out.println(bar.getState());
 		System.out.println(bar.getName());
 		
+		Builder mealBuilder = Menu.Meal.newBuilder();
+		mealBuilder.setName("This is a name");
 	}
 
 }

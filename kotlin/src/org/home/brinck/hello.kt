@@ -1,16 +1,18 @@
 import org.home.brinck.Foo
 import org.home.brinck.Bar
+import org.home.brinck.Menu
+import org.home.brinck.Menu.Meal
 
 fun main(args: Array<String>) {
-    println("Hello, World!")
-	
+	println("Hello, World!")
+
 	println("  ***   Foo   ***   ")
 
-		val foo = Foo(Thread.State.BLOCKED)
+	val foo = Foo(Thread.State.BLOCKED)
 	println(foo.state)
 	println("state set: " + foo.isSet)
 	foo.setState();
-    println("state set: " + foo.isSet)
+	println("state set: " + foo.isSet)
 	println(foo.state)
 	foo.state = Thread.State.TERMINATED
 	println(foo.state)
@@ -25,4 +27,10 @@ fun main(args: Array<String>) {
 	println(bar.state)
 	bar.state = Thread.State.TERMINATED
 	println(bar.state)
+
+
+	val meal = Meal.newBuilder()
+	meal.name = "This is a name"
+	meal.numIngredients = 10
+	println(meal)
 }
