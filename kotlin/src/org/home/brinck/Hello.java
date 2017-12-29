@@ -28,12 +28,6 @@ public class Hello {
 		
 		Builder mealBuilder = Menu.Meal.newBuilder();
 		mealBuilder.setName("This is a name");
-		new GregorianCalendar();
-		
-		long brithdate = 
-				ChronoUnit.YEARS.between(LocalDate.of(1985, 7, 27), 
-						                 LocalDate.now());
-		
 	}
 
 }

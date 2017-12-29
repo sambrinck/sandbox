@@ -39,21 +39,31 @@ fun main(args: Array<String>) {
 	println(meal.build())
 	println(meal.build())
 	
-	var sam = Person(name="Sam Brinck",
-					 shoeSize=14)
 	
-	val birthdate = LocalDate.of(1985, 7, 27)
-	sam.age = ChronoUnit.YEARS.between(birthdate,
-						               LocalDate.now())
-	val days = ChronoUnit.DAYS.between(birthdate,
-						               LocalDate.now())
-	val months = ChronoUnit.MONTHS.between(birthdate,
-						               LocalDate.now())
+	var list = mutableListOf(	
+		Person(name="Sam Brinck",
+	           birthdate=LocalDate.of(1985,7,27),
+	           shoeSize=14),
+		Person(name="Selina Brinck",
+	           birthdate=LocalDate.of(1985,1,24),
+	           shoeSize=14)
+			)
 	
-	println("${sam.name} is ${sam.age} years, ${days} days, $months old")
+	for (person in list) {
+		
+	println("${person.name} is " +
+			"${person.age} years, " +
+			"${person.ageMonths} months old " +
+			"${person.ageDays} days, " +
+			"")
+	}
 	
 }
 
 class Person (val name : String = "Person Name",
-			  var age : Long = 18,
-			  var shoeSize : Int = 7)
+			  var birthdate : LocalDate,
+			  var shoeSize : Int = 7) {
+	val age       get() = ChronoUnit.YEARS.between(birthdate, LocalDate.now())
+	val ageMonths get() = ChronoUnit.MONTHS.between(birthdate, LocalDate.now()) % 12
+	val ageDays   get() = ChronoUnit.DAYS.between(birthdate, LocalDate.now()) % 365
+}
