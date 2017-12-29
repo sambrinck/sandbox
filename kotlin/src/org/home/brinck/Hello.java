@@ -1,6 +1,11 @@
 package org.home.brinck;
 
 import java.lang.Thread.State;
+import java.time.Clock;
+import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
+import java.util.GregorianCalendar;
+
 import org.home.brinck.Foo;
 import org.home.brinck.Menu.Meal;
 import org.home.brinck.Menu.Meal.Builder;
@@ -23,6 +28,12 @@ public class Hello {
 		
 		Builder mealBuilder = Menu.Meal.newBuilder();
 		mealBuilder.setName("This is a name");
+		new GregorianCalendar();
+		
+		long brithdate = 
+				ChronoUnit.YEARS.between(LocalDate.of(1985, 7, 27), 
+						                 LocalDate.now());
+		
 	}
 
 }
