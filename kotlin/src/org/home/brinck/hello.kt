@@ -10,6 +10,13 @@ import java.time.temporal.ChronoUnit;
 fun main(args: Array<String>) {
 	println("Hello, World!")
 
+	kotlinTest()
+	javaTest()
+	protoTest()
+	listTest()
+}
+
+fun kotlinTest() {
 	println("  ***   Foo   ***   ")
 
 	val foo = Foo(Thread.State.BLOCKED)
@@ -20,7 +27,9 @@ fun main(args: Array<String>) {
 	println(foo.state)
 	foo.state = Thread.State.TERMINATED
 	println(foo.state)
+}
 
+fun javaTest() {
 	println("  ***   Bar   ***   ")
 
 	val bar = Bar(Thread.State.BLOCKED)
@@ -31,15 +40,17 @@ fun main(args: Array<String>) {
 	println(bar.state)
 	bar.state = Thread.State.TERMINATED
 	println(bar.state)
+}
 
-
+fun protoTest() {
 	val meal = Meal.newBuilder()
 	meal.name = "This is a name"
 	meal.numIngredients = 10
 	println(meal.build())
 	println(meal.build())
-	
-	
+}
+
+fun listTest() {
 	var list = mutableListOf(	
 		Person(name="Sam Brinck",
 	           birthdate=LocalDate.of(1985,7,27),
@@ -57,7 +68,6 @@ fun main(args: Array<String>) {
 			"${person.ageDays} days, " +
 			"")
 	}
-	
 }
 
 class Person (val name : String = "Person Name",
