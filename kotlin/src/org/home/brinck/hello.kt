@@ -52,13 +52,14 @@ fun protoTest() {
 
 fun listTest() {
 	var list = mutableListOf(	
-		Person(name="Sam Brinck",
+		Person(name="Sam Brinck   ",
 	           birthdate=LocalDate.of(1985,7,27),
 	           shoeSize=14),
 		Person(name="Selina Brinck",
 	           birthdate=LocalDate.of(1985,1,24),
 	           shoeSize=14)
 			)
+	list.add(Person("No Name", LocalDate.of(2000, 1, 1)))
 	
 	for (person in list) {
 		
@@ -75,5 +76,6 @@ class Person (val name : String = "Person Name",
 			  var shoeSize : Int = 7) {
 	val age       get() = ChronoUnit.YEARS.between(birthdate, LocalDate.now())
 	val ageMonths get() = ChronoUnit.MONTHS.between(birthdate, LocalDate.now()) % 12
-	val ageDays   get() = ChronoUnit.DAYS.between(birthdate, LocalDate.now()) % 365
+	val ageDays   get() = Math.abs( birthdate.dayOfMonth - LocalDate.now().dayOfMonth)
+	
 }
