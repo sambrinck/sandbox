@@ -22,8 +22,8 @@ object WebServiceInterface {
         val params = HashMap<String, String>()
         params.put("username", username)
         params.put("password", password)
-        val signin = performPostCall(Config[Config.SERVICES.SIGN_IN], params)
-        val success = signin.responseCode == 200 && !signin.response.contains("Sign in")
+        val signIn = performPostCall(Config[Config.SERVICES.SIGN_IN], params)
+        val success = signIn.responseCode == 200 && !signIn.response.contains("Sign in")
         if (success) {
             currentUserId = get(Config[Config.SERVICES.CURRENT_ID])
         }
