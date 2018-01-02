@@ -37,6 +37,6 @@ fun enumerateWardCallings(wardId: Int) {
             .readText())
 
     json.map { it as JSONObject }.forEach({
-        println("Name: ${it["spokenName"]}\tCalling: ${it["position"]}")
+        println("Name: ${it["spokenName"]}\tCalling: ${it["position"]} \t Email: ${it["email"]}")
     })
 }
