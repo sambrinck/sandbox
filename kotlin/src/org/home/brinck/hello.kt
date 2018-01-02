@@ -53,7 +53,7 @@ fun protoTest() {
 fun listTest() {
 	var list = mutableListOf(	
 		Person(name="Sam Brinck   ",
-	           birthdate=LocalDate.of(1985,7,27),
+	           birthdate = LocalDate.of(1985,7,27),
 	           shoeSize=14),
 		Person(name="Selina Brinck",
 	           birthdate=LocalDate.of(1985,1,24),
