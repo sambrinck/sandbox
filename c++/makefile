@@ -1,5 +1,5 @@
 
-CXXFLAGS:=-std=c++17
+CXXFLAGS:=-std=c++17 -pthread
 
 SRCS:=$(wildcard *.cc)
 OBJS:=$(SRCS:.cc=.o)
@@ -13,8 +13,7 @@ all : $(APPS)
 % : %.o
 	@$(CXX) $(LDFLAGS) -o $@ $^
 
-
-.PHONY : clean
+.PHONY : clean 
 
 clean :
 	@rm -f $(OBJS) $(APPS)
