@@ -11,7 +11,7 @@ APPS:=$(SRCS:%.cc=%)
 all : $(APPS)
 
 % : %.o
-	@$(CXX) -o $@ $^
+	@$(CXX) $(LDFLAGS) -o $@ $^
 
 
 .PHONY : clean
