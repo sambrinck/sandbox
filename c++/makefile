@@ -2,7 +2,6 @@
 CXXFLAGS:=-std=c++17 -pthread
 
 SRCS:=$(wildcard *.cc)
-OBJS:=$(SRCS:.cc=.o)
 APPS:=$(SRCS:%.cc=%)
 
 
@@ -16,4 +15,4 @@ all : $(APPS)
 .PHONY : clean 
 
 clean :
-	@rm -f $(OBJS) $(APPS)
+	@rm -f $(APPS)
